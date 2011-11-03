@@ -1,3 +1,9 @@
+# revision 23167
+# category ConTeXt
+# catalog-ctan /macros/context/contrib/context-mathsets
+# catalog-date 2011-05-13 02:08:48 +0200
+# catalog-license other-free
+# catalog-version undef
 Name:		texlive-context-mathsets
 Version:	20110513
 Release:	1
@@ -45,6 +51,7 @@ Arseneau's LaTeX package braket.
 %{_texmfdistdir}/tex/context/interface/third/t-mathsets.xml
 %{_texmfdistdir}/tex/context/third/mathsets/t-mathsets.tex
 %doc %{_texmfdistdir}/doc/context/third/mathsets/mathsets-doc.pdf
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -55,3 +62,5 @@ Arseneau's LaTeX package braket.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
