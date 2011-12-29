@@ -18,7 +18,6 @@ BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
 Requires(post):	texlive-context
-Conflicts:	texlive-texmf <= 20110705-3
 
 %description
 Typeset good-looking set notation (e.g., {x|x \in Y}), as well
@@ -26,24 +25,12 @@ as similar things such as Dirac bra-ket notation, conditional
 probabilities, etc. The package is a partial port of Donald
 Arseneau's LaTeX package braket.
 
-%pre
-    %_texmf_mtxrun_pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-    %_texmf_mtxrun_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mtxrun_pre
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
-	%_texmf_mtxrun_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -51,7 +38,6 @@ Arseneau's LaTeX package braket.
 %{_texmfdistdir}/tex/context/interface/third/t-mathsets.xml
 %{_texmfdistdir}/tex/context/third/mathsets/t-mathsets.tex
 %doc %{_texmfdistdir}/doc/context/third/mathsets/mathsets-doc.pdf
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -62,5 +48,3 @@ Arseneau's LaTeX package braket.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
