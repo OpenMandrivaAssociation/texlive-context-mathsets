@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-context-mathsets
 Version:	20110513
-Release:	4
+Release:	5
 Summary:	Set notation in ConTeXt
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/context/contrib/context-mathsets
