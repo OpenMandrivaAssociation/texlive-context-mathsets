@@ -3,7 +3,7 @@ Version:	47085
 Release:	2
 Summary:	Set notation in ConTeXt
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/context/contrib/context-mathsets
+URL:		https://www.ctan.org/tex-archive/macros/context/contrib/context-mathsets
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/context-mathsets.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/context-mathsets.doc.r%{version}.tar.xz
